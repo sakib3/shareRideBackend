@@ -1,0 +1,22 @@
+{
+  "name": "shareridebackend",
+  "version": "1.0.0",
+  "description": "Share ride backend",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/sakib3/shareRideBackend.git"
+  },
+  "author": "Sabbir Rahman Sakib",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/sakib3/shareRideBackend/issues"
+  },
+  "homepage": "https://github.com/sakib3/shareRideBackend#readme",
+  "dependencies": {
+    "express": "^4.16.2"
+  }
+}
