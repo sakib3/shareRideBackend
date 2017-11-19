@@ -1,6 +1,6 @@
 var config = {};
 
-config.mongoURI = process.env.DBURI;
+config.mongoURI = process.env.DBURI || 'mongodb://localhost/shareride';
 
 config.port = process.env.PORT || 8000;
 

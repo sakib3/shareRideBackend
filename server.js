@@ -1,12 +1,18 @@
-const express = require('express');
-const app = express();
-const bodyParser = require('body-parser');
-const config = require('./config');
-const router = require('./router');
+var express = require('express'),
+bodyParser = require('body-parser'),
+config = require('./config'),
+app = express(),
+router = require('./router');
+
+app.use(function(req, res, next) {
+    if(req.originalUrl != '/rides')
+        res.send({'error': 'Bad Request'});
+    next();
+});
+router(app);
 
 app.use(bodyParser.urlencoded({ extended: false }));
 app.use(bodyParser.json());
-
-app.use("/", router);
-
-app.listen(config.port, () => console.log('Example app listening on port '+config.port+'!'));
+app.listen(config.port, function(){
+    console.log('Example app listening on port '+config.port+'!');
+});
