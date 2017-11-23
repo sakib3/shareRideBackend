@@ -11,3 +11,13 @@ exports.getAllRides =
       }
     );
 };
+
+exports.addRide = 
+function(req,res) {
+  var rideReq = new FindRide(req.body);
+  rideReq.save(function(err,ride){
+    if(err) 
+      res.send(err);
+    res.json(ride);
+  });
+};
