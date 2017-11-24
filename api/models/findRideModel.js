@@ -2,29 +2,29 @@ var mongoose = require('mongoose'),
   Schema = mongoose.Schema,
   FindRideSchema = new Schema({
     name: {
-      type: 'string'
+      type: String
     },
     from: {
-      type: 'string'
+      type: String
     },
     to: {
-      type: 'string'
+      type: String
     },
     journeyFrequency: {
-      type: 'string',
-      enum: ['Regular', 'One-off', 'Custom schedule'],
-      defaultsTo: 'Regular'
+      type: String,
+      enum: ["Regular", "One-off", "Custom schedule"],
+      defaultsTo: "Regular"
     },
     daysOfTravel: {
-      type: ['string'],
-      enum: ['Sat', 'Sun', 'Mon', 'Tue', 'Wed', 'Thu', 'Fri'],
-      defaultsTo: ['Sat']
+      type: [String],
+      enum: ["Sat", "Sun", "Mon", "Tue", "Wed", "Thu", "Fri"],
+      defaultsTo: ["Sat"]
     },
     journeyDate: {
-      type: 'date'
+      type: "date"
     },
     returnDate: {
-      type: 'date'
+      type: "date"
     }
   });
 
