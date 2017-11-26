@@ -17,8 +17,13 @@ exports.addUser =
 function(req,res) {
   var user = new User(req.body);
   user.save(function(err,user){
-    if(err) 
-      res.send(err);
+    if(err){
+        if (err.name === 'MongoError' && err.code === 11000) {
+            res.status(400).send({error:'email must be unique'});
+          } else {
+            res.status(400).send(err);
+          }
+    } 
     res.json(user);
   });
 };
