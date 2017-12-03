@@ -20,6 +20,11 @@ exports.decode = function(req,res,next){
     jwt.decode(config.jwtSecret, res.locals.token.token, function (err, decodedPayload, decodedHeader) {
         if (err)
             return res.status(400).send(err);
+        res.locals.payload = decodedPayload;
     });
     next();
+};
+
+exports.decodeToken = function(token,cb){
+    jwt.decode(config.jwtSecret, token, cb);
 };

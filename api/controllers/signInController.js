@@ -1,10 +1,10 @@
 var mongoose = require('mongoose');
 var User = mongoose.model('User');
 
-exports.getUser =
-    function(username, cb) {
+exports.getUserById =
+    function(Id, cb) {
         User.findOne(
-            {'name': username},
+            { _id: new mongoose.mongo.ObjectId(Id)},
             function (err, user) {
                 if (err)
                     return cb(err, null);

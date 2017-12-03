@@ -2,12 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="dcf385a8-6332-497b-95f9-3af2438ab7a9" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/api/controllers/signInController.js" afterPath="$PROJECT_DIR$/api/controllers/signInController.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/api/routes/signInRoutes.js" afterPath="$PROJECT_DIR$/api/routes/signInRoutes.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/package-lock.json" afterPath="$PROJECT_DIR$/package-lock.json" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/package.json" afterPath="$PROJECT_DIR$/package.json" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/router.js" afterPath="$PROJECT_DIR$/router.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/server.js" afterPath="$PROJECT_DIR$/server.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <ignored path="shareRideBackend.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -63,7 +58,10 @@
           <provider selected="true" editor-type-id="text-editor">
             <state vertical-scroll-proportion="0.0">
               <caret line="2" column="0" selection-start-line="2" selection-start-column="0" selection-end-line="2" selection-end-column="0" />
-              <folding />
+              <folding>
+                <marker date="1512285249752" expanded="true" signature="117:344" placeholder="{...}" />
+                <marker date="1512285249752" expanded="true" signature="206:327" placeholder="{...}" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -234,7 +232,7 @@
     <servers />
   </component>
   <component name="ToolWindowManager">
-    <frame x="0" y="23" width="1680" height="1027" extended-state="1" />
+    <frame x="0" y="23" width="1680" height="1027" extended-state="0" />
     <editor active="false" />
     <layout>
       <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
@@ -300,7 +298,10 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
           <caret line="2" column="0" selection-start-line="2" selection-start-column="0" selection-end-line="2" selection-end-column="0" />
-          <folding />
+          <folding>
+            <marker date="1512285249752" expanded="true" signature="117:344" placeholder="{...}" />
+            <marker date="1512285249752" expanded="true" signature="206:327" placeholder="{...}" />
+          </folding>
         </state>
       </provider>
     </entry>

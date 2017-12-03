@@ -9,7 +9,9 @@ app.route('/signin')
     passportAuthenticate,
     function (req, res) {
       res.json(req.user);
-    });
+    }
+  );
+
 app.route('/signUp')
   .post(
     user.addUser,
