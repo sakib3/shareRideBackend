@@ -5,7 +5,7 @@ app = express(),
 router = require('./router');
 
 var requireAuthentication = function (req, res, next) {
-    console.log('Accessing the secret section ...')
+    console.log('Accessing the secret section ...');
     next();
 };
 

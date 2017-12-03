@@ -14,5 +14,3 @@ mongoose.connect(config.mongoURI, {useMongoClient: true});
 
 module.exports = [signInRoutes, findRideRoutes, postRideRoutes];
 
-
-
