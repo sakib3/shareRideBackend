@@ -12,6 +12,15 @@ app.route('/signin')
     }
   );
 
+app.route('/signin')
+  .post(
+    user.getUser,
+    jwt.encode,
+    function (req, res) {
+      res.json(res.locals.token);
+    }
+  );
+
 app.route('/signUp')
   .post(
     user.addUser,

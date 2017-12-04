@@ -12,6 +12,23 @@ exports.getUserById =
             }
         );
     };
+exports.getUser =
+    function(req,res,next) {
+        User.findOne(
+            { email: req.body.email },
+            function (err, user) {
+                
+                if (err)
+                    return res.status(400).send(err);
+                if(!user)
+                    return res.status(400).send({error: req.body.email +' doesnot exist!'});
+                if(req.body.password != user.password)
+                    return res.status(400).send({error: 'wrong password!'});
+                res.locals.user = user;
+                return next();
+            }
+        );
+    };
 
 exports.addUser = 
 function(req,res,next) {
