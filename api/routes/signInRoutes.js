@@ -4,13 +4,13 @@ var passportAuthenticate = require('../middleware/passport');
 var user = require('../controllers/signInController');
 var jwt = require('../middleware/jwt');
 
-app.route('/signin')
-  .get(
-    passportAuthenticate,
-    function (req, res) {
-      res.json(req.user);
-    }
-  );
+// app.route('/signin')
+//   .get(
+//     passportAuthenticate,
+//     function (req, res) {
+//       res.json(req.user);
+//     }
+//   );
 
 app.route('/signin')
   .post(

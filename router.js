@@ -12,5 +12,8 @@ signInRoutes = require('./api/routes/signInRoutes');
 mongoose.Promise = global.Promise;
 mongoose.connect(config.mongoURI, {useMongoClient: true});
 
-module.exports = [signInRoutes, findRideRoutes, postRideRoutes];
+module.exports = {
+    root: [signInRoutes],
+    api: [findRideRoutes, postRideRoutes]
+};
 

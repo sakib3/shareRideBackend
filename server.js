@@ -18,7 +18,8 @@ app.use(function(req, res, next) {
 app.use(bodyParser.urlencoded({ extended: false }));
 app.use(bodyParser.json());
 //app.all('*', requireAuthentication);
-app.use('/api',router);
+app.use('/',router.root);
+app.use('/api',requireAuthentication,router.api);
 app.listen(config.port, function(){
     console.log('App listening on port '+config.port+'!');
 });
