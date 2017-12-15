@@ -17,6 +17,9 @@ app.use(bodyParser.urlencoded({ extended: false }));
 app.use(bodyParser.json());
 
 //app.all('/api/*', passportAuthenticate);
+app.get('/test',function(req,res){
+  res.json({data:'echo'});
+})
 app.use('/',router.root);
 app.use('/api',router.api);
 app.listen(config.port, function(){
