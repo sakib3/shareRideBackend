@@ -17,6 +17,10 @@ exports.encode = function(req,res,next){
 };
 
 exports.decode = function(req,res,next){
+    if(!res.locals.token)
+        return res.status(400).send({error : 'Token Invalido!'});
+    if(!res.locals.token.token)
+        return res.status(400).send({error : 'Token Invalido!'});
     jwt.decode(config.jwtSecret, res.locals.token.token, function (err, decodedPayload, decodedHeader) {
         if (err)
             return res.status(400).send(err);

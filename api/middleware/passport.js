@@ -7,11 +7,14 @@ var jwt = require('./jwt');
 passport.use(new BearerStrategy(
     function(token, done) {
         var id = null;
+        var error = null;
         jwt.decodeToken(token,function (err, decodedPayload, decodedHeader) {
-            if (err)
-                return res.status(400).send(err);
+            error = err;
             id = decodedPayload.id;
         });
+
+        if (error)
+            return done({error: error.message});
         user.getUserById(id, function (err, user) {
         if (err) { return done(err); }
         if (!user) { return done(null, false); }
@@ -20,4 +23,11 @@ passport.use(new BearerStrategy(
     }
 ));
 
-module.exports = passport.authenticate('bearer', { session: false });
+module.exports = passport.authenticate(
+    'bearer', 
+    { session: false },
+    function(err, user, next) {
+    if (err) return next(err);
+        return next();
+    }
+);

@@ -10,6 +10,14 @@ var mongoose = require('mongoose'),
     to: {
       type: String
     },
+    sourceLocation: {
+      type: [Number],
+      index: '2d'
+    },
+    destinationLocation: {
+      type: [Number],
+      index: '2d'
+    },
     journeyFrequency: {
       type: String,
       enum: ["Regular", "One-off", "Custom schedule"],

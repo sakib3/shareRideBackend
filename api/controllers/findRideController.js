@@ -12,11 +12,11 @@ exports.getAllRides =
     );
 };
 
-exports.addRide = 
+exports.addRide =
 function(req,res) {
   var rideReq = new FindRide(req.body);
   rideReq.save(function(err,ride){
-    if(err) 
+    if(err)
       res.send(err);
     res.json(ride);
   });
