@@ -3,11 +3,9 @@ bodyParser = require('body-parser'),
 config = require('./config'),
 app = express(),
 router = require('./router');
-
-var requireAuthentication = function (req, res, next) {
-    console.log('Accessing the secret section ...');
-    next();
-};
+jwt = require('./api/middleware/jwt');
+var requireAuthentication = jwt.decode;
+passportAuthenticate = require('./api/middleware/passport');
 
 app.use(function(req, res, next) {
     res.header("Access-Control-Allow-Origin", "*");
@@ -17,9 +15,10 @@ app.use(function(req, res, next) {
 
 app.use(bodyParser.urlencoded({ extended: false }));
 app.use(bodyParser.json());
-//app.all('*', requireAuthentication);
+
+//app.all('/api/*', passportAuthenticate);
 app.use('/',router.root);
-app.use('/api',requireAuthentication,router.api);
+app.use('/api',router.api);
 app.listen(config.port, function(){
     console.log('App listening on port '+config.port+'!');
 });
