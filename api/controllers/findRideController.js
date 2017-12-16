@@ -2,6 +2,7 @@ var mongoose = require('mongoose')
 var FindRide = mongoose.model('FindRide')
 exports.getAllRides =
   function (req, res) {
+    console.log('user?',res.locals.user)
     FindRide.find(
       {},
       function (err, rides) {

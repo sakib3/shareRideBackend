@@ -1,5 +1,7 @@
+require('./userModel.js'); 
 var mongoose = require('mongoose'),
   Schema = mongoose.Schema,
+  User = mongoose.model('User'),
   FindRideSchema = new Schema({
     name: {
       type: String
@@ -33,7 +35,8 @@ var mongoose = require('mongoose'),
     },
     returnDate: {
       type: "date"
-    }
+    },
+    user: { type: Schema.Types.ObjectId, ref: 'User' }
   });
 
 module.exports = mongoose.model('FindRide', FindRideSchema);

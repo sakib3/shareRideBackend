@@ -16,12 +16,11 @@ app.use(function(req, res, next) {
 app.use(bodyParser.urlencoded({ extended: false }));
 app.use(bodyParser.json());
 
-//app.all('/api/*', passportAuthenticate);
-app.get('/echo',function(req,res){
-  res.json({data:'echo'});
-})
+app.all('/api/*', passportAuthenticate);
+
 app.use('/',router.root);
 app.use('/api',router.api);
+
 app.listen(config.port, function(){
     console.log('App listening on port '+config.port+'!');
 });

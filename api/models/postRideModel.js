@@ -1,5 +1,7 @@
+require('./userModel.js'); 
 var mongoose = require('mongoose'),
 Schema = mongoose.Schema,
+User = mongoose.model('User'),
 PostRideSchema = new Schema({
   name: {
     type: String
@@ -45,7 +47,8 @@ PostRideSchema = new Schema({
   },
   availability: {
     type: String
-  }
+  },
+  user: { type: Schema.Types.ObjectId, ref: 'User' }
 });
 
 module.exports = mongoose.model('PostRide', PostRideSchema);
