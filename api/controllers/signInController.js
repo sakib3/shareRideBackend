@@ -17,7 +17,7 @@ exports.getUser =
         User.findOne(
             { email: req.body.email },
             function (err, user) {
-                
+
                 if (err)
                     return res.status(400).send(err);
                 if(!user)
@@ -30,17 +30,16 @@ exports.getUser =
         );
     };
 
-exports.addUser = 
+exports.addUser =
 function(req,res,next) {
   var userReq = new User(req.body);
   userReq.save(function(err,user){
     if(err){
-        if (err.name === 'MongoError' && err.code === 11000)
-        return res.status(400).send({error:'email must be unique'});
+        //if (err.name === 'MongoError' && err.code === 11000)
+        //return res.status(400).send({error:'email must be unique'});
         return res.status(400).send(err);
-    } 
+    }
     res.locals.user = user;
     return next();
   });
 };
-

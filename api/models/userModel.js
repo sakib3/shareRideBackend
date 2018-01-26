@@ -8,11 +8,21 @@ UserSchema = new Schema({
   email: {
     type: String,
     required: true,
-    unique: true 
+    unique: true
   },
   password: {
     type: String,
     required: true
+  },
+  phone: {
+    type: String,
+    required: true,
+    unique: 'Phone must be unique!'
+  },
+  gender: {
+    type: String,
+    enum: ['Male', 'Female'],
+    required: [true, 'Gender is required!']
   }
 });
 

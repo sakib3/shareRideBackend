@@ -6,6 +6,7 @@ var jwt = require('./jwt');
 
 passport.use(new BearerStrategy(
     function(token, done) {
+      console.log('token',token);
         var id = null,
             error = null;
 
@@ -31,6 +32,7 @@ module.exports = function(req,res,next){
       'bearer',
       { session: false },
       function(err, user, info) {
+        console.log('user',user)
         if (err) return res.status(401).json(err);
         if (!user) return res.status(404).json({error: 'user not found'});
         res.locals.user = user;
