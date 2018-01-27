@@ -17,7 +17,8 @@ app.route('/signin')
     user.getUser,
     jwt.encode,
     function (req, res) {
-      res.json(res.locals.token);
+      res.locals.user._id = null;
+      res.json(res.locals);
     }
   );
 
@@ -26,7 +27,8 @@ app.route('/signUp')
     user.addUser,
     jwt.encode,
     function (req, res) {
-      res.json(res.locals.token);
+      res.locals.user._id = null;
+      res.json(res.locals);
     }
   );
 
