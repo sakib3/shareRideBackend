@@ -13,7 +13,7 @@ PostRideSchema = new Schema({
     type: String
   },
   sourceLocation: {
-    type: [String],
+    type: [{ type : Number}],
     index: '2d'
   },
   destinationLocation: {
