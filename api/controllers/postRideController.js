@@ -18,7 +18,7 @@ exports.getPostRidesNear =
     //var options = { near: req.body.sourceLocation, maxDistance: 5 };
     PostRide.find(
       {
-        sourceLocation : { near: [req.body.sourceLocation[0], req.body.sourceLocation[1]], type: 'Number', maxDistance: 5 }
+        sourceLocation : { near: [req.body.sourceLocation[0], req.body.sourceLocation[1]], type: 'Point', maxDistance: 5 }
       },
       function (err, rides) {
         if (err)
