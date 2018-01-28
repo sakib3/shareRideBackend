@@ -1,4 +1,4 @@
-require('./userModel.js'); 
+require('./userModel.js');
 var mongoose = require('mongoose'),
 Schema = mongoose.Schema,
 User = mongoose.model('User'),
@@ -13,7 +13,7 @@ PostRideSchema = new Schema({
     type: String
   },
   sourceLocation: {
-    type: [Number],
+    type: [Number, Number],
     index: '2d'
   },
   destinationLocation: {
