@@ -31,18 +31,20 @@ exports.getPostRidesNear =
 exports.getPostRidesNear2 =
   function (req, res) {
     //var options = { near: req.body.sourceLocation, maxDistance: 5 };
-    PostRide.find({
-      sourceLocation: {
-        $geoWithin: {
-          $center: [[req.body.sourceLocation[0], req.body.sourceLocation[1]], 5 / 3963.2
+    PostRide.find(
+      {
+        sourceLocation : { 
+          $geoWithin: {
+           $center: [ [req.body.sourceLocation[0], req.body.sourceLocation[1]], 5 / 3963.2 ] 
+          }
         }
-      }
-    },
-    function (err, rides) {
+      },
+      function (err, rides) {
         if (err)
           res.send(err);
         res.json(rides);
-    });
+      }
+    );
 };
 
 exports.addPostRide =
