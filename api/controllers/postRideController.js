@@ -37,6 +37,11 @@ exports.getPostRidesNear2 =
           $center: [[req.body.sourceLocation[0], req.body.sourceLocation[1]], 5 / 3963.2
         }
       }
+    },
+    function (err, rides) {
+        if (err)
+          res.send(err);
+        res.json(rides);
     });
 };
 
