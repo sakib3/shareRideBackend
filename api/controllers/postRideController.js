@@ -30,6 +30,10 @@ exports.getPostRidesNear =
 
 exports.getPostRidesNear2 =
   function (req, res) {
+    
+    // need to remove !!!!
+    console.log(JSON.stringify(req.body));
+
     //var options = { near: req.body.sourceLocation, maxDistance: 5 };
     PostRide.find(
       {
