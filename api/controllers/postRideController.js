@@ -40,7 +40,8 @@ exports.getPostRidesNear2 =
       {
         sourceLocation : { 
           $geoWithin: {
-           $center: [ [req.body.sourceLocation[0], req.body.sourceLocation[1]], 5 / 3963.2 ] 
+            $centerSphere: [ [req.body.sourceLocation[0], req.body.sourceLocation[1]], 5 / 3963.2 ] 
+           //$center: [ [req.body.sourceLocation[0], req.body.sourceLocation[1]], 5 / 3963.2 ] 
           }
         }
       },

@@ -14,11 +14,13 @@ PostRideSchema = new Schema({
   },
   sourceLocation: {
     type: [{ type : Number}],
-    index: '2d'
+    //index: '2d',
+    index: '2dsphere'
   },
   destinationLocation: {
     type: [Number],
-    index: '2d'
+    //index: '2d',
+    index: '2dsphere'
   },
   stopover:  {
     type: [String]
